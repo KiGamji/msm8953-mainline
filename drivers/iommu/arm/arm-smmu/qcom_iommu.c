@@ -781,6 +781,9 @@ static int qcom_iommu_device_probe(struct platform_device *pdev)
 	if (!qcom_scm_is_available())
 		return -EPROBE_DEFER;
 
+	if (!qcom_scm_is_available())
+		return -EPROBE_DEFER;
+
 	/* find the max asid (which is 1:1 to ctx bank idx), so we know how
 	 * many child ctx devices we have:
 	 */
