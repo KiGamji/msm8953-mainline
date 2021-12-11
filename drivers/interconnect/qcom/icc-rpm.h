@@ -95,6 +95,7 @@ struct qcom_icc_desc {
 	size_t num_clocks;
 	enum qcom_icc_type type;
 	const struct regmap_config *regmap_cfg;
+	bool inherit_regmap;
 	unsigned int qos_offset;
 };
 
