@@ -192,7 +192,10 @@ venc_try_fmt_common(struct venus_inst *inst, struct v4l2_format *f)
 	pixmp->height = clamp(pixmp->height, frame_height_min(inst),
 			      frame_height_max(inst));
 
-	pixmp->width = ALIGN(pixmp->width, 128);
+	if (f->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE) {
+		pixmp->width = ALIGN(pixmp->width, 128);
+	}
+
 	pixmp->height = ALIGN(pixmp->height, 32);
 
 	pixmp->width = ALIGN(pixmp->width, 2);
@@ -390,7 +393,7 @@ static int venc_s_parm(struct file *file, void *fh, struct v4l2_streamparm *a)
 	struct v4l2_fract *timeperframe = &out->timeperframe;
 	u64 us_per_frame, fps;
 
-	if (a->type != V4L2_BUF_TYPE_VIDEO_OUTPUT &&
+	if (a->type != V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE &&
 	    a->type != V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
 		return -EINVAL;
 
@@ -422,7 +425,7 @@ static int venc_g_parm(struct file *file, void *fh, struct v4l2_streamparm *a)
 {
 	struct venus_inst *inst = to_inst(file);
 
-	if (a->type != V4L2_BUF_TYPE_VIDEO_OUTPUT &&
+	if (a->type != V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE &&
 	    a->type != V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
 		return -EINVAL;
 
@@ -590,7 +593,7 @@ static const struct v4l2_ioctl_ops venc_ioctl_ops = {
 	.vidioc_g_parm = venc_g_parm,
 	.vidioc_enum_framesizes = venc_enum_framesizes,
 	.vidioc_enum_frameintervals = venc_enum_frameintervals,
-	.vidioc_subscribe_event = venc_subscribe_event,
+	.vidioc_subscribe_event = v4l2_ctrl_subscribe_event,
 	.vidioc_unsubscribe_event = v4l2_event_unsubscribe,
 	.vidioc_try_encoder_cmd = v4l2_m2m_ioctl_try_encoder_cmd,
 	.vidioc_encoder_cmd = venc_encoder_cmd,
@@ -745,8 +748,7 @@ static int venc_set_properties(struct venus_inst *inst)
 			return ret;
 	}
 
-	if (inst->fmt_cap->pixfmt == V4L2_PIX_FMT_HEVC &&
-	    ctr->profile.hevc == V4L2_MPEG_VIDEO_HEVC_PROFILE_MAIN_10) {
+	if (inst->fmt_cap->pixfmt == V4L2_PIX_FMT_HEVC) {
 		struct hfi_hdr10_pq_sei hdr10;
 		unsigned int c;
 
