@@ -59,6 +59,11 @@
 };
 
 &dsi0 {
+	vdda-supply = <&pm8953_s3>;
+	vddio-supply = <&pm8953_l6>;
+
+	status = "okay";
+
 	panel@0 {
 		compatible = "tianma,tl057fvxp01";
 		reg = <0>;
@@ -83,6 +88,10 @@
 &dsi0_out {
 	remote-endpoint = <&panel_in>;
 	data-lanes = <0 1 2 3>;
+};
+
+&dsi0_phy {
+	vcca-supply = <&pm8953_l3>;
 };
 
 &hsusb_phy {
@@ -254,6 +263,8 @@
 &sdhc_2 {
 	vmmc-supply = <&pm8953_l11>;
 	vqmmc-supply = <&pm8953_l12>;
+
+	cd-gpios = <&tlmm 133 GPIO_ACTIVE_LOW>;
 
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&sdc2_clk_on &sdc2_cmd_on &sdc2_data_on &sdc2_cd_off>;
