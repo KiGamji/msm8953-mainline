@@ -309,6 +309,7 @@
 	};
 };
 
+/*
 &camss {
 	status = "okay";
 	compatible = "qcom,sdm450-camss";
@@ -355,6 +356,7 @@
 		    <&camss_mclk0_default>,
 		    <&camss_mclk1_default>;
 };
+
 
 &cci_i2c0 {
 	camera-sensor@10 { // Front camera
@@ -438,7 +440,7 @@
 			};
 		};
 	};
-};
+};*/
 
 &dsi0 {
 	status = "okay";
