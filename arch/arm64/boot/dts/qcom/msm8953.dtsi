@@ -13,11 +13,6 @@
 #include <dt-bindings/sound/qcom,q6voice.h>
 #include <dt-bindings/thermal/thermal.h>
 
-#define BIN_625  0x04
-#define BIN_626  0x81
-#define BIN_632  0x45
-#define BIN_ALL	 0xff
-
 / {
 	interrupt-parent = <&intc>;
 
@@ -271,62 +266,62 @@
 
 		opp-652800000 {
 			opp-hz = /bits/ 64 <652800000>;
-			opp-supported-hw = <BIN_ALL>;
+			opp-supported-hw = <0xC5>;
 			required-opps = <&cpr_opp1>;
 			opp-suspend;
 		};
 
 		opp-1036800000 {
 			opp-hz = /bits/ 64 <1036800000>;
-			opp-supported-hw = <BIN_ALL>;
+			opp-supported-hw = <0xC5>;
 			required-opps = <&cpr_opp2>;
 		};
 
 		opp-1248000000 {
 			opp-hz = /bits/ 64 <1248000000>;
-			opp-supported-hw = <BIN_ALL>;
+			opp-supported-hw = <0xC5>;
 			required-opps = <&cpr_opp3>;
 		};
 
 		opp-1401600000 {
 			opp-hz = /bits/ 64 <1401600000>;
-			opp-supported-hw = <BIN_ALL>;
+			opp-supported-hw = <0xC5>;
 			required-opps = <&cpr_opp4>;
 		};
 
 		opp-1689600000 {
 			opp-hz = /bits/ 64 <1689600000>;
-			opp-supported-hw = <BIN_ALL>;
+			opp-supported-hw = <0xC5>;
 			required-opps = <&cpr_opp5>;
 		};
 
 		opp-1804800000 {
 			opp-hz = /bits/ 64 <1804800000>;
-			opp-supported-hw = <BIN_ALL>;
+			opp-supported-hw = <0xC5>;
 			required-opps = <&cpr_opp6>;
 		};
 
 		opp-1958400000 {
 			opp-hz = /bits/ 64 <1958400000>;
-			opp-supported-hw = <BIN_625>;
+			opp-supported-hw = <0x85>;
 			required-opps = <&cpr_opp7>;
 		};
 
 		opp-2016000000 {
 			opp-hz = /bits/ 64 <2016000000>;
-			opp-supported-hw = <BIN_625>;
+			opp-supported-hw = <0x85>;
 			required-opps = <&cpr_opp8>;
 		};
 
 		opp-2150400000 {
 			opp-hz = /bits/ 64 <2150400000>;
-			opp-supported-hw = <BIN_626>;
+			opp-supported-hw = <0x81>;
 			required-opps = <&cpr_opp9>;
 		};
 
 		opp-2208000000 {
 			opp-hz = /bits/ 64 <2208000000>;
-			opp-supported-hw = <BIN_626>;
+			opp-supported-hw = <0x81>;
 			required-opps = <&cpr_opp10>;
 		};
 	};
