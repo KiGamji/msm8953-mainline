@@ -777,10 +777,10 @@ static const struct cpr_desc sdm632_cpr_desc = {
 		{
 			.num_fuse_corners = 4,
 			.reference_freq = (struct cpr_match_list[]) {
-				{ CPR_MATCH(0xff, 0xff, BIT(0)), 633600000 },
-				{ CPR_MATCH(0xff, 0xff, BIT(1)), 1094400000 },
-				{ CPR_MATCH(0xff, 0xff, BIT(2)), 1401600000 },
-				{ CPR_MATCH(0xff, 0xff, BIT(3)), 2016000000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(0)), 614400000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(1)), 1036800000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(2)), 1363200000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(3)), 1804800000 },
 				{ },
 			},
 			.voltage_adjustement = (struct cpr_match_list[]) {
@@ -813,10 +813,10 @@ static const struct cpr_desc sdm632_cpr_desc = {
 		}, {
 			.num_fuse_corners = 4,
 			.reference_freq = (struct cpr_match_list[]) {
-				{ CPR_MATCH(0xff, 0xff, BIT(0)), 614400000 },
-				{ CPR_MATCH(0xff, 0xff, BIT(1)), 1036800000 },
-				{ CPR_MATCH(0xff, 0xff, BIT(2)), 1363200000 },
-				{ CPR_MATCH(0xff, 0xff, BIT(3)), 1804800000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(0)), 633600000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(1)), 1094400000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(2)), 1401600000 },
+				{ CPR_MATCH(0xff, 0xff, BIT(3)), 2016000000 },
 				{ },
 			},
 			.voltage_adjustement = (struct cpr_match_list[]) {
