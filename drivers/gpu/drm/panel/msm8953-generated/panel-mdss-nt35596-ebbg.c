@@ -212,8 +212,6 @@ static int nt35596_ebbg_enable(struct drm_panel *panel)
 static int nt35596_ebbg_unprepare(struct drm_panel *panel)
 {
 	struct nt35596_ebbg *ctx = to_nt35596_ebbg(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

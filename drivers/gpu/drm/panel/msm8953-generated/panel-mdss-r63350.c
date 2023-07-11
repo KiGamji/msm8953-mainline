@@ -146,8 +146,6 @@ static int r63350_enable(struct drm_panel *panel)
 static int r63350_unprepare(struct drm_panel *panel)
 {
 	struct r63350 *ctx = to_r63350(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

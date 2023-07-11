@@ -130,8 +130,6 @@ static int r63350_ebbg_enable(struct drm_panel *panel)
 static int r63350_ebbg_unprepare(struct drm_panel *panel)
 {
 	struct r63350_ebbg *ctx = to_r63350_ebbg(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

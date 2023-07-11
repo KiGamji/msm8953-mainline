@@ -154,8 +154,6 @@ static int auo720_enable(struct drm_panel *panel)
 static int auo720_unprepare(struct drm_panel *panel)
 {
 	struct auo720 *ctx = to_auo720(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

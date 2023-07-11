@@ -218,8 +218,6 @@ static int auo_r61322_enable(struct drm_panel *panel)
 static int auo_r61322_unprepare(struct drm_panel *panel)
 {
 	struct auo_r61322 *ctx = to_auo_r61322(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

@@ -192,8 +192,6 @@ static int hx8399c_auo_53_enable(struct drm_panel *panel)
 static int hx8399c_auo_53_unprepare(struct drm_panel *panel)
 {
 	struct hx8399c_auo_53 *ctx = to_hx8399c_auo_53(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

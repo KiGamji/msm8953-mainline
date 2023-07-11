@@ -206,8 +206,6 @@ static int otm1911_enable(struct drm_panel *panel)
 static int otm1911_unprepare(struct drm_panel *panel)
 {
 	struct otm1911 *ctx = to_otm1911(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

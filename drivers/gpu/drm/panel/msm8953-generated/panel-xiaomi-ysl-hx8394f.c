@@ -205,8 +205,6 @@ static int truly720_enable(struct drm_panel *panel)
 static int truly720_unprepare(struct drm_panel *panel)
 {
 	struct truly720 *ctx = to_truly720(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

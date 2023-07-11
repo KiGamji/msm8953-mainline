@@ -139,8 +139,6 @@ static int csot_622_v0_enable(struct drm_panel *panel)
 static int csot_622_v0_unprepare(struct drm_panel *panel)
 {
 	struct csot_622_v0 *ctx = to_csot_622_v0(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

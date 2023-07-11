@@ -163,8 +163,6 @@ static int tianma_r63350_enable(struct drm_panel *panel)
 static int tianma_r63350_unprepare(struct drm_panel *panel)
 {
 	struct tianma_r63350 *ctx = to_tianma_r63350(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

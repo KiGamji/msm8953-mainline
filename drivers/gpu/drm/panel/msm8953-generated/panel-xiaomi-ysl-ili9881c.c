@@ -163,8 +163,6 @@ static int sc_ili9881c720_enable(struct drm_panel *panel)
 static int sc_ili9881c720_unprepare(struct drm_panel *panel)
 {
 	struct sc_ili9881c720 *ctx = to_sc_ili9881c720(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

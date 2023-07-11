@@ -627,8 +627,6 @@ static int ili7807d_djn_53_enable(struct drm_panel *panel)
 static int ili7807d_djn_53_unprepare(struct drm_panel *panel)
 {
 	struct ili7807d_djn_53 *ctx = to_ili7807d_djn_53(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

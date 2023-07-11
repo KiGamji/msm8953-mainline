@@ -133,8 +133,6 @@ static int ili7807plus_enable(struct drm_panel *panel)
 static int ili7807plus_unprepare(struct drm_panel *panel)
 {
 	struct ili7807plus *ctx = to_ili7807plus(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

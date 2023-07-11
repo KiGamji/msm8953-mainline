@@ -126,8 +126,6 @@ static int nt36672_tianmaplus_e7_enable(struct drm_panel *panel)
 static int nt36672_tianmaplus_e7_unprepare(struct drm_panel *panel)
 {
 	struct nt36672_tianmaplus_e7 *ctx = to_nt36672_tianmaplus_e7(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

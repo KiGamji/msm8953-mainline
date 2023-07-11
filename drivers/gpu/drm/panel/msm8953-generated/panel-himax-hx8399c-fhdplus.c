@@ -126,8 +126,6 @@ static int hx8399cplus_enable(struct drm_panel *panel)
 static int hx8399cplus_unprepare(struct drm_panel *panel)
 {
 	struct hx8399cplus *ctx = to_hx8399cplus(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

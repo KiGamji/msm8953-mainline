@@ -144,8 +144,6 @@ static int nt35596_tianma_enable(struct drm_panel *panel)
 static int nt35596_tianma_unprepare(struct drm_panel *panel)
 {
 	struct nt35596_tianma *ctx = to_nt35596_tianma(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

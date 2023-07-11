@@ -292,8 +292,6 @@ static int ft8716_enable(struct drm_panel *panel)
 static int ft8716_unprepare(struct drm_panel *panel)
 {
 	struct ft8716 *ctx = to_ft8716(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

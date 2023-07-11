@@ -186,8 +186,6 @@ static int boe_520_v0_enable(struct drm_panel *panel)
 static int boe_520_v0_unprepare(struct drm_panel *panel)
 {
 	struct boe_520_v0 *ctx = to_boe_520_v0(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

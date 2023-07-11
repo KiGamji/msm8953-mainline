@@ -120,8 +120,6 @@ static int ili9885_boe_enable(struct drm_panel *panel)
 static int ili9885_boe_unprepare(struct drm_panel *panel)
 {
 	struct ili9885_boe *ctx = to_ili9885_boe(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

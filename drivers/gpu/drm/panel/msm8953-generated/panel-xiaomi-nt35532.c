@@ -138,8 +138,6 @@ static int nt35532_enable(struct drm_panel *panel)
 static int nt35532_unprepare(struct drm_panel *panel)
 {
 	struct nt35532 *ctx = to_nt35532(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;

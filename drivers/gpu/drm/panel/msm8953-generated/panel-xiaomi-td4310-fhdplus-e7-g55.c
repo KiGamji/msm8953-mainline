@@ -144,8 +144,6 @@ static int td4310plus_e7_g55_enable(struct drm_panel *panel)
 static int td4310plus_e7_g55_unprepare(struct drm_panel *panel)
 {
 	struct td4310plus_e7_g55 *ctx = to_td4310plus_e7_g55(panel);
-	struct device *dev = &ctx->dsi->dev;
-	int ret;
 
 	if (!ctx->prepared)
 		return 0;
