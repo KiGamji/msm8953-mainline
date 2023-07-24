@@ -442,7 +442,7 @@
 	};
 };*/
 
-&dsi0 {
+&mdss_dsi0 {
 	status = "okay";
 
 	pinctrl-names = "default";
@@ -463,18 +463,18 @@
 
 		port {
 			panel_in: endpoint {
-				remote-endpoint = <&dsi0_out>;
+				remote-endpoint = <&mdss_dsi0_out>;
 			};
 		};
 	};
 };
 
-&dsi0_out {
+&mdss_dsi0_out {
 	data-lanes = <0 1 2 3>;
 	remote-endpoint = <&panel_in>;
 };
 
-&dsi0_phy {
+&mdss_dsi0_phy {
 	vcca-supply = <&pm8953_l3>;
 };
 
