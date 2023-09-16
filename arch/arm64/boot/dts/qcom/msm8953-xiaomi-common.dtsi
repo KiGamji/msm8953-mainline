@@ -89,7 +89,7 @@
 
 		vmon-slot-no = <1>;
 		imon-slot-no = <1>;
-		interleave_mode = <0>;
+		maxim,interleave-mode;
 
 		#sound-dai-cells = <0>;
 	};
@@ -120,7 +120,6 @@
 	rmi4_ts: touchscreen@20 {
 		reg = <0x20>;
 		compatible = "syna,rmi4-i2c";
-		interrupts-parent = <&tlmm>;
 		interrupts-extended = <&tlmm 65 IRQ_TYPE_EDGE_FALLING>;
 
 		#address-cells = <1>;
