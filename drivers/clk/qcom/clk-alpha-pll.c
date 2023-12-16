@@ -2543,7 +2543,7 @@ const struct clk_ops clk_alpha_pll_stromer_plus_ops = {
 	.unprepare = clk_alpha_pll_disable,
 	.is_enabled = clk_alpha_pll_is_enabled,
 	.recalc_rate = clk_alpha_pll_recalc_rate,
-	.determine_rate = clk_alpha_pll_stromer_determine_rate,
+	.round_rate = clk_alpha_pll_round_rate,
 	.set_rate = clk_alpha_pll_stromer_plus_set_rate,
 };
 EXPORT_SYMBOL_GPL(clk_alpha_pll_stromer_plus_ops);
